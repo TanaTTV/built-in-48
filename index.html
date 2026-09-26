@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Built in 48 — Automations, AI agents &amp; websites in 48 hours</title>
+<meta name="description" content="Flat-rate software builds delivered in 48 hours. Automation $150, Custom AI Agent $300, Simple Website $400. Built fast with Claude Code, Codex and agentic tools.">
+<meta property="og:title" content="Built in 48 — flat-rate builds in 48 hours">
+<meta property="og:description" content="Automation $150 · AI Agent $300 · Website $400. No calls, no quotes. Delivered in 48 hours.">
+<meta property="og:type" content="website">
+<script>
+/* ================= CONFIG — edit this block only ================= */
+window.B48 = {
+  // PLACEHOLDER: replace with your real PayPal email address
+  PAYPAL_EMAIL: "ajanismithdev@gmail.com",
+  // Intake form submissions are emailed here (via FormSubmit.co)
+  INTAKE_EMAIL: "ajanismithdev@gmail.com",
+  // Public URL of this page (used for PayPal return link)
+  PAGE_URL: "https://tanattv.github.io/built-in-48/",
+  CURRENCY: "USD",
+  PACKAGES: {
+    automation: { name: "Built in 48 - Automation",      amount: "150.00" },
+    agent:      { name: "Built in 48 - Custom AI Agent", amount: "300.00" },
+    website:    { name: "Built in 48 - Simple Website",  amount: "400.00" }
+  }
+};
+/* ================================================================ */
+window.B48.payLink = function (key) {
+  var c = window.B48, p = c.PACKAGES[key];
+  return "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick" +
+    "&business=" + encodeURIComponent(c.PAYPAL_EMAIL) +
+    "&item_name=" + encodeURIComponent(p.name) +
+    "&amount=" + p.amount +
+    "&currency_code=" + c.CURRENCY +
+    "&no_shipping=1" +
+    "&return=" + encodeURIComponent(c.PAGE_URL + "?paid=1") +
+    "&cancel_return=" + encodeURIComponent(c.PAGE_URL);
+};
+</script>
+<style>
+:root{--bg:#0b0c0f;--panel:#14161b;--line:#262a33;--text:#eef0f4;--muted:#9aa1ad;--accent:#7cf29c;--accent2:#5ad1ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:var(--accent2)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-weight:800;letter-spacing:-.02em;font-size:20px;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:#06140b;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font-size:16px}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+header.hero{padding:64px 0 48px}
+.eyebrow{display:inline-block;font-size:13px;color:var(--accent);border:1px solid #2d4a36;background:#0f1d14;padding:4px 10px;border-radius:99px;margin-bottom:18px}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-.03em;margin:0 0 18px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:640px;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:36px;color:var(--muted);font-size:14px}
+.facts b{color:var(--text)}
+section{padding:56px 0}
+h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+.card.pop{border-color:#2f5d3d;box-shadow:0 0 0 1px #2f5d3d inset}
+.card h3{margin:0 0 4px;font-size:20px}
+.price{font-size:40px;font-weight:800;letter-spacing:-.03em;margin:8px 0 2px}
+.price small{font-size:15px;color:var(--muted);font-weight:500}
+.card p{color:var(--muted);margin:6px 0 14px}
+.card ul{list-style:none;padding:0;margin:0 0 18px;font-size:15px}
+.card li{padding:5px 0 5px 24px;position:relative}
+.card li:before{content:"✓";position:absolute;left:0;color:var(--accent)}
+.card li.no:before{content:"–";color:var(--muted)}
+.card li.no{color:var(--muted)}
+.card .btn{margin-top:auto;text-align:center}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+.step{border-top:2px solid var(--line);padding-top:16px}
+.step:before{counter-increment:s;content:"0" counter(s);color:var(--accent);font-weight:800;font-size:14px}
+.step h4{margin:6px 0 4px;font-size:17px}.step p{margin:0;color:var(--muted);font-size:15px}
+form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:16px;max-width:720px}
+label{font-size:14px;font-weight:600;display:block;margin-bottom:6px}
+label .opt{color:var(--muted);font-weight:400}
+input,select,textarea{width:100%;background:#0e1014;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:12px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent2);border-color:transparent}
+textarea{min-height:130px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+.note{font-size:13px;color:var(--muted);margin:0}
+.msg{padding:14px 16px;border-radius:10px;font-size:15px;display:none}
+.msg.ok{display:block;background:#0f1d14;border:1px solid #2f5d3d}
+.msg.err{display:block;background:#1d0f10;border:1px solid #5d2f33}
+.banner{display:none;background:#0f1d14;border-bottom:1px solid #2f5d3d;text-align:center;padding:12px 20px;font-weight:600}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);margin:8px 0 0}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+.hp{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<div class="banner" id="paidBanner">✅ Payment received — thank you! If you haven't sent your brief yet, fill out the form below. Your 48-hour clock starts once I have both.</div>
+<div class="wrap">
+<nav><a class="logo" href="#">Built in <span>48</span></a><a class="btn ghost" href="#start">Start a build</a></nav>
+
+<header class="hero">
+  <span class="eyebrow">Flat rate · No calls · 48-hour delivery</span>
+  <h1>Your automation, AI agent, or website — <em>built in 48 hours.</em></h1>
+  <p class="lead">I build with Claude Code, Codex, and other agentic coding tools, so I get things done fast. Pick a package, tell me what you need, and get a working build in two days. No meetings, no custom quotes, no surprises.</p>
+  <div class="cta"><a class="btn" href="#pricing">See packages</a><a class="btn ghost" href="#how">How it works</a></div>
+  <div class="facts"><div><b>48 hrs</b> from brief to delivery</div><div><b>1 round</b> of revisions included</div><div><b>Fixed price</b>, paid upfront</div></div>
+</header>
+
+<section id="pricing">
+  <h2>Pick a package</h2>
+  <p class="sub">One clear job per package. If it's bigger than this, message me for a custom build.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Automation</h3>
+      <div class="price">$150 <small>flat</small></div>
+      <p>One workflow that connects tools you already use, so the busywork runs itself.</p>
+      <ul>
+        <li>1 workflow in Zapier, n8n, Make, or a script</li>
+        <li>Up to ~5 steps across up to 3 apps</li>
+        <li>e.g. form → CRM → Slack alert, or invoice → sheet → email</li>
+        <li>Setup, testing, and a short how-to</li>
+        <li>48-hour delivery · 1 revision round</li>
+        <li class="no">You supply app logins / API access; paid tool plans not included</li>
+      </ul>
+      <a class="btn" href="#start" data-pkg="automation">Get this — $150</a>
+    </div>
+    <div class="card pop">
+      <h3>Custom AI Agent</h3>
+      <div class="price">$300 <small>flat</small></div>
+      <p>One agent or chatbot that does one specific job well.</p>
+      <ul>
+        <li>Support bot, lead qualifier, or research / assistant agent</li>
+        <li>Trained on your docs, FAQ, or site (up to ~50 pages)</li>
+        <li>1 channel: website widget, Slack, Discord, Telegram, or email</li>
+        <li>Prompting, guardrails, and testing</li>
+        <li>48-hour delivery · 1 revision round</li>
+        <li class="no">AI usage / API costs billed to your account</li>
+      </ul>
+      <a class="btn" href="#start" data-pkg="agent">Get this — $300</a>
+    </div>
+    <div class="card">
+      <h3>Simple Website</h3>
+      <div class="price">$400 <small>flat</small></div>
+      <p>A clean, fast, mobile-friendly site that's live, not a mockup.</p>
+      <ul>
+        <li>One-page site or up to 4 short pages</li>
+        <li>Mobile-friendly, fast, basic SEO</li>
+        <li>Contact form or booking / payment link</li>
+        <li>Deployed live and connected to your domain</li>
+        <li>48-hour delivery · 1 revision round</li>
+        <li class="no">No e-commerce stores, logins, or copywriting from scratch; domain not included</li>
+      </ul>
+      <a class="btn" href="#start" data-pkg="website">Get this — $400</a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p class="sub">Two steps from you. The rest is on me.</p>
+  <div class="steps">
+    <div class="step"><h4>Send your brief</h4><p>Fill out the short form below: what you want built, examples, and your package.</p></div>
+    <div class="step"><h4>Pay upfront</h4><p>You'll go straight to secure PayPal checkout for your package's flat price.</p></div>
+    <div class="step"><h4>I build it</h4><p>The 48-hour clock starts when I have your brief and payment. I'll reach out if I need access to anything.</p></div>
+    <div class="step"><h4>You get it</h4><p>Delivered and working, with one round of revisions to dial it in.</p></div>
+  </div>
+</section>
+
+<section id="start">
+  <h2>Start your build</h2>
+  <p class="sub">Submit your brief, then you'll be sent to PayPal to pay for your package.</p>
+  <form id="intake" action="https://formsubmit.co/ajanismithdev@gmail.com" method="POST">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="_subject" value="New Built in 48 brief">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <div>
+      <label for="package">Package</label>
+      <select id="package" name="package" required>
+        <option value="">Choose a package…</option>
+        <option value="automation">Automation — $150</option>
+        <option value="agent">Custom AI Agent — $300</option>
+        <option value="website">Simple Website — $400</option>
+      </select>
+    </div>
+    <div>
+      <label for="brief">What do you want built?</label>
+      <textarea id="brief" name="what_to_build" required placeholder="Describe the job. What tools do you use now? What should happen, and when? What does 'done' look like?"></textarea>
+    </div>
+    <div>
+      <label for="refs">Examples / reference links <span class="opt">(optional)</span></label>
+      <textarea id="refs" name="reference_links" style="min-height:80px" placeholder="Sites you like, screenshots, docs, current workflow, etc."></textarea>
+    </div>
+    <div class="row">
+      <div><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
+      <div><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email"></div>
+    </div>
+    <div><label for="phone">Phone <span class="opt">(optional)</span></label><input id="phone" type="tel" name="phone" autocomplete="tel"></div>
+    <button class="btn" type="submit" id="submitBtn">Send brief &amp; continue to payment →</button>
+    <div class="msg" id="formMsg"></div>
+    <p class="note">Payments are processed securely by PayPal. Need something bigger than a package? Describe it above and choose the closest package — I'll reply before you pay anything extra.</p>
+  </form>
+</section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <details><summary>When does the 48 hours start?</summary><p>Once I have your completed brief, payment, and any access I need (logins, API keys, content). If something's missing I'll tell you right away.</p></details>
+  <details><summary>What if my project doesn't fit a package?</summary><p>Message me for a custom build. If a brief you've paid for turns out to be too big for the package, I'll tell you before starting and refund you or suggest a fit.</p></details>
+  <details><summary>What counts as a revision?</summary><p>One round of changes to the delivered build, within the original scope. New features or a different project are a new order.</p></details>
+  <details><summary>Do you do calls?</summary><p>No calls needed. Everything happens by email so it stays fast and on the record.</p></details>
+</section>
+
+<footer>© <span id="yr"></span> Built in 48 · Albuquerque, NM · <a href="mailto:ajanismithdev@gmail.com">ajanismithdev@gmail.com</a></footer>
+</div>
+<script>
+(function(){
+  var c = window.B48;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var form = document.getElementById('intake');
+  form.action = "https://formsubmit.co/" + c.INTAKE_EMAIL;
+  var sel = document.getElementById('package');
+  document.querySelectorAll('[data-pkg]').forEach(function(a){
+    a.addEventListener('click', function(){ sel.value = a.getAttribute('data-pkg'); });
+  });
+  if (/[?&]paid=1/.test(location.search)) document.getElementById('paidBanner').style.display = 'block';
+  var msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var key = sel.value; if (!c.PACKAGES[key]) { sel.focus(); return; }
+    var data = new FormData(form);
+    data.set('package', c.PACKAGES[key].name + ' ($' + c.PACKAGES[key].amount + ')');
+    data.set('_replyto', data.get('email'));
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch("https://formsubmit.co/ajax/" + c.INTAKE_EMAIL, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(j){
+        var link = c.payLink(key);
+        msg.className = 'msg ok';
+        msg.innerHTML = 'Brief received. Taking you to PayPal… <a href="' + link + '">Click here if nothing happens</a>.';
+        setTimeout(function(){ location.href = link; }, 1200);
+      })
+      .catch(function(){
+        var link = c.payLink(key);
+        msg.className = 'msg err';
+        msg.innerHTML = 'Couldn\u2019t send your brief automatically. Please <a href="mailto:' + c.INTAKE_EMAIL + '?subject=Built%20in%2048%20brief">email it to me</a>, then <a href="' + link + '">pay via PayPal here</a>.';
+        btn.disabled = false; btn.textContent = 'Send brief & continue to payment →';
+      });
+  });
+})();
+</script>
+</body>
+</html>
