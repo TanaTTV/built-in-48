@@ -13,8 +13,10 @@
 window.B48 = {
   // PLACEHOLDER: replace with your real PayPal email address
   PAYPAL_EMAIL: "ajanismithdev@gmail.com",
-  // Intake form submissions are emailed here (via FormSubmit.co)
-  INTAKE_EMAIL: "ajanismithdev@gmail.com",
+  // Intake form submissions are emailed to ajanismithdev@gmail.com via FormSubmit.co.
+  // This is FormSubmit's private alias for that inbox (activated). Your plain email also works here.
+  INTAKE_EMAIL: "978a77a6d5231fd398d8d4b1ebe280df",
+  CONTACT_EMAIL: "ajanismithdev@gmail.com",
   // Public URL of this page (used for PayPal return link)
   PAGE_URL: "https://tanattv.github.io/built-in-48/",
   CURRENCY: "USD",
@@ -173,7 +175,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <section id="start">
   <h2>Start your build</h2>
   <p class="sub">Submit your brief, then you'll be sent to PayPal to pay for your package.</p>
-  <form id="intake" action="https://formsubmit.co/ajanismithdev@gmail.com" method="POST">
+  <form id="intake" action="https://formsubmit.co/978a77a6d5231fd398d8d4b1ebe280df" method="POST">
     <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
     <input type="hidden" name="_subject" value="New Built in 48 brief">
     <input type="hidden" name="_template" value="table">
@@ -246,7 +248,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
       .catch(function(){
         var link = c.payLink(key);
         msg.className = 'msg err';
-        msg.innerHTML = 'Couldn\u2019t send your brief automatically. Please <a href="mailto:' + c.INTAKE_EMAIL + '?subject=Built%20in%2048%20brief">email it to me</a>, then <a href="' + link + '">pay via PayPal here</a>.';
+        msg.innerHTML = 'Couldn\u2019t send your brief automatically. Please <a href="mailto:' + c.CONTACT_EMAIL + '?subject=Built%20in%2048%20brief">email it to me</a>, then <a href="' + link + '">pay via PayPal here</a>.';
         btn.disabled = false; btn.textContent = 'Send brief & continue to payment →';
       });
   });
